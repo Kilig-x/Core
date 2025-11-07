@@ -1,0 +1,12 @@
+# 开发环境
+debug:
+  GoModel: debug
+  Port: 5000
+  Mongodb: 127.0.0.1:21000
+  DbName: customer_service_db
+  Multimedia: https://kf
+  AiSemantic: http://ai/semantic
+  AutomaticReply: false
+
+# 生产环境
+# ...

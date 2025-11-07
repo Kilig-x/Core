@@ -1,0 +1,25 @@
+version: '3'
+services:
+  ai:
+    image: 你的域名/ai/nlp:1.6
+    ports:
+      - 5000:5000
+    networks:
+      - customer_service
+  kf_core:
+    build: .
+    image: 你的仓库/kefu/kefu-online:newUI
+    ports:
+      - 20700:5000
+    networks:
+      - customer_service
+    environment:
+      PRODUCTION: ${PRODUCTION}
+    depends_on:
+      - ai
+    volumes:
+      - /opt/www:/www
+      - /opt/upload:/upload
+
+networks:
+  customer_service:
